@@ -1,0 +1,53 @@
+﻿@model Dataverse.Models.Customer
+
+@{
+    ViewData["Title"] = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewContext.ClientValidationEnabled = true;
+    //@(ViewContext.ClientValidationEnabled =true);
+
+}
+
+
+<h1>New Customer</h1>
+
+
+@using (Html.BeginForm("Create", "Customers"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Lname)
+        @Html.TextBoxFor(m => m.Lname, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Lname)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Fname)
+        @Html.TextBoxFor(m => m.Fname, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Fname)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Tel)
+        @Html.TextBoxFor(m => m.Tel, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Tel)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Address)
+        @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Address)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Email)
+    </div>
+    @Html.HiddenFor(m => m.Id)
+
+    <button type="submit" class="btn btn-primary">Save</button>
+}
+
+
+    
+
+
+
+
+
